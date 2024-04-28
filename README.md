@@ -1,9 +1,9 @@
 # Gender Representation in Superhero Comics
-## SML312 Final Project 23F
+## COS Junior Independent Work 24S
 
-![picture of wonderwoman in front of superman](https://github.com/jong-nam-ahn/GenderRep_in_Comics/assets/113152345/65ac4b7b-88d8-44ce-9c2e-aad2eb3ba750)
+![picture of robot drawing an image of comfort women](https://github.com/jong-nam-ahn/GenderRep_in_Comics/assets/113152345/65ac4b7b-88d8-44ce-9c2e-aad2eb3ba750)
 
 
-The issue of representation has always persisted in literature. Are men and women portrayed differently in comics? I use multiple classification models to investigate the relationship between gender and character attributes (abilities, power stats, appearance, etc). Neural Network Classification is the best performing and least overfitting. The weight of a character is most important in predicting gender, which is somewhat intuitive; however, other features of importance might be worthwhile to consider. Code was written and run on Jupyter Notebook. 
+Capitalizing on the fact that robots are uniquely suited to perform repetitive tasks accurately, I investigate how robots could complement human experience in the form of activist art. I attempt to create robotic art that could raise awareness for Comfort Women, who were victims of sexual exploitation during World War II. I probe into the relationships between science, technology, and society to reason how robots might be utilized to reduce them.
 
-Dataset was found on Kaggle: [Superheroes NLP Dataset](https://www.kaggle.com/datasets/jonathanbesomi/superheroes-nlp-dataset); credit belongs to the original content creator. 
+Technical work was inspired by: [Drawing Robot for Arduino](https://www.instructables.com/Arduino-Drawing-Robot/). 
