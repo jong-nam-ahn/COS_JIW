@@ -9,7 +9,7 @@
 //#include <Servo.h>
 #include <Adafruit_TiCoServo.h>
 
-//------- VARIABLES-------------
+//--------VARIABLES-------------
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW // hardware type for LED
 #define MAX_DEVICES 1 // # of matrix
 // initializing LED matrix
@@ -90,8 +90,8 @@ unsigned long d = 250;
 // Stepper sequence
 // line corresponding to stepper is
 // orange pink blue yellow (2 4 5 3)
-int L_stepper_pins[] = {5, 3, 2, 4};
-int R_stepper_pins[] = {A2, A4, A5, A3};
+int L_stepper[] = {5, 3, 2, 4};
+int R_stepper[] = {A2, A4, A5, A3};
 
 // forward
 int fwd_mask[][4] =  {{1, 0, 1, 0},
@@ -115,10 +115,10 @@ void setup() {
 
   // motors
   for(int pin=0; pin<4; pin++){
-    pinMode(L_stepper_pins[pin], OUTPUT);
-    digitalWrite(L_stepper_pins[pin], LOW);
-    pinMode(R_stepper_pins[pin], OUTPUT);
-    digitalWrite(R_stepper_pins[pin], LOW);
+    pinMode(L_stepper[pin], OUTPUT);
+    digitalWrite(L_stepper[pin], LOW);
+    pinMode(R_stepper[pin], OUTPUT);
+    digitalWrite(R_stepper[pin], LOW);
   }
   penServo.attach(servoPin);
   
@@ -202,8 +202,8 @@ void forward(float distance){
   for(int step=0; step<steps; step++){
     for(int mask=0; mask<4; mask++){
       for(int pin=0; pin<4; pin++){
-        digitalWrite(L_stepper_pins[pin], rev_mask[mask][pin]);
-        digitalWrite(R_stepper_pins[pin], fwd_mask[mask][pin]);
+        digitalWrite(L_stepper[pin], rev_mask[mask][pin]);
+        digitalWrite(R_stepper[pin], fwd_mask[mask][pin]);
       }
       track = millis();
       track_until = track;
@@ -222,8 +222,8 @@ void backward(float distance){
   for(int step=0; step<steps; step++){
     for(int mask=0; mask<4; mask++){
       for(int pin=0; pin<4; pin++){
-        digitalWrite(L_stepper_pins[pin], fwd_mask[mask][pin]);
-        digitalWrite(R_stepper_pins[pin], rev_mask[mask][pin]);
+        digitalWrite(L_stepper[pin], fwd_mask[mask][pin]);
+        digitalWrite(R_stepper[pin], rev_mask[mask][pin]);
       }
       track = millis();
       track_until = track;
@@ -246,8 +246,8 @@ void right(float degrees){
   for(int step=0; step<steps; step++){
     for(int mask=0; mask<4; mask++){
       for(int pin=0; pin<4; pin++){
-        digitalWrite(R_stepper_pins[pin], rev_mask[mask][pin]);
-        digitalWrite(L_stepper_pins[pin], rev_mask[mask][pin]);
+        digitalWrite(R_stepper[pin], rev_mask[mask][pin]);
+        digitalWrite(L_stepper[pin], rev_mask[mask][pin]);
       }
       track = millis();
       track_until = track;
@@ -271,8 +271,8 @@ void left(float degrees){
   for(int step=0; step<steps; step++){
     for(int mask=0; mask<4; mask++){
       for(int pin=0; pin<4; pin++){
-        digitalWrite(R_stepper_pins[pin], fwd_mask[mask][pin]);
-        digitalWrite(L_stepper_pins[pin], fwd_mask[mask][pin]);
+        digitalWrite(R_stepper[pin], fwd_mask[mask][pin]);
+        digitalWrite(L_stepper[pin], fwd_mask[mask][pin]);
       }
       track = millis();
       track_until = track;
@@ -288,8 +288,8 @@ void done(){ // unlock motor to save battery
   unsigned long track;
   for(int mask=0; mask<4; mask++){
     for(int pin=0; pin<4; pin++){
-      digitalWrite(R_stepper_pins[pin], LOW);
-      digitalWrite(L_stepper_pins[pin], LOW);
+      digitalWrite(R_stepper[pin], LOW);
+      digitalWrite(L_stepper[pin], LOW);
     }
     track = millis();
     while(millis() - track < delay_time){
@@ -598,7 +598,7 @@ void test2() {
   movement(80, 0, true);
 }
 
-// test position update (result sould be (10, -10 sqrt 3))
+// test position update (result should be (10, -10 sqrt 3))
 void test3() {
   movement(20, 60, l);
   movement(20, 120, r);
