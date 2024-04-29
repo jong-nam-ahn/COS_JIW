@@ -1,4 +1,4 @@
-# Gender Representation in Superhero Comics
+# Robotics as a Medium for Activist Art
 ## COS Junior Independent Work 24S
 
 ![picture of robot drawing an image of comfort women](https://github.com/jong-nam-ahn/COS_JIW/blob/main/image/robot_drawing.png)
