@@ -5,5 +5,3 @@
 
 
 Capitalizing on the fact that robots are uniquely suited to perform repetitive tasks accurately, I investigate how robots could complement human experience in the form of activist art. I attempt to create robotic art that could raise awareness for Comfort Women, who were victims of sexual exploitation during World War II. I probe into the relationships between science, technology, and society to reason how robots might be utilized to reduce them.
-
-Technical work was inspired by: [Drawing Robot for Arduino](https://www.instructables.com/Arduino-Drawing-Robot/). 
